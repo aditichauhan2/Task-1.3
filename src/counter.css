@@ -1,0 +1,47 @@
+.Counter {
+  text-align: center;
+}
+
+.Counter h2 {
+  margin: 20px 0;
+  color: #6cbaff;
+}
+
+.App h1 {
+  text-align: center;
+  color: #8340f7;
+  font-size: 2rem;
+}
+
+
+/* Button Styles */
+.Counter button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Specific Styles for Each Button */
+.increment { /* Increment */
+  background-color: #51af51;
+  color: white;
+}
+
+.decrement { /* Decrement */
+  background-color: #ee6666;
+  color: white;
+}
+
+.reset { /* Reset */
+  background-color: #85a6e3;
+  color: white;
+}
+
+/* Hover Effects */
+.Counter button:hover {
+  opacity: 0.8;
+}
