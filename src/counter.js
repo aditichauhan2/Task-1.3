@@ -1,22 +1,27 @@
-import React, { useState } from 'react';  
-import './counter.css';  
+import React, { useState, useMemo, useCallback } from 'react';
+import './Counter.css';
 
-const Counter = () => {  
-  const [count, setCount] = useState(0);  
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
-  const increment = () => setCount((prevCount) => prevCount + 1);  
-  const decrement = () => setCount((prevCount) => prevCount - 1);  
-  const reset = () => setCount(0);  
+  // Memoizing whether decrement and reset should be disabled
+  const isDisabled = useMemo(() => count === 0, [count]);
 
-  return (  
+  // Memoized callback functions
+  const increment = useCallback(() => setCount(prev => prev + 1), []);
+  const decrement = useCallback(() => setCount(prev => prev - 1), []);
+  const reset = useCallback(() => setCount(0), []);
+
+  return (
     <div className='Counter'>  
-      <h2>Count: {count}</h2>  
-      <button className = "increment" onClick={increment}>Increment</button>  
-      <button className = "decrement" onClick={decrement}>Decrement</button>  
-      <button className = "reset" onClick={reset}>Reset</button>  
+      <div className="button-container">
+        <button className="decrement" onClick={decrement} disabled={isDisabled}>Decrement</button>  
+        <h2>{count}</h2>  
+        <button className="increment" onClick={increment}>Increment</button>  
+      </div>
+      <button className="reset" onClick={reset} disabled={isDisabled}>Reset</button>  
     </div>  
-  );  
-};  
+  );
+};
 
 export default Counter;
-

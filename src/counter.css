@@ -1,22 +1,55 @@
-.Counter {
-  text-align: center;
+/* Center everything */
+.App {
+  height: 100vh; /* Full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content towards the top */
+  margin-top: 50px; /* Adjust to move content slightly up */
 }
 
-.Counter h2 {
-  margin: 20px 0;
-  color: #6cbaff;
-}
 
+/* Center the heading */
 .App h1 {
   text-align: center;
   color: #8340f7;
   font-size: 2rem;
+  margin-bottom: 20px;
 }
 
+/* Counter container */
+.Counter {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Counter value */
+.Counter h2 {
+  margin: 20px 0;
+  color: #6cbaff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adds space between buttons */
+}
+
+/* Reset Button */
+.reset {
+  margin-top: 15px; /* Pushes reset button down */
+}
 
 /* Button Styles */
 .Counter button {
-  margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -44,4 +77,11 @@
 /* Hover Effects */
 .Counter button:hover {
   opacity: 0.8;
+}
+
+/* Disabled Button Styles */
+.Counter button:disabled {
+  cursor: not-allowed;  /* Changes cursor to 'not-allowed' */
+  opacity: 0.5;         /* Makes disabled buttons appear faded */
+  background-color: #ccc !important; /* Override button color */
 }
